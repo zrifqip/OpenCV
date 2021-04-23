@@ -46,7 +46,7 @@ gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf dig
  ## Contours
  contour ini adalah alat yang berhuna untuk analisis bentuk dan deteksi serta mengenal objek objek. contour ini bisa dicari menggunakan fungsi `cv.findCOuntours` yang memili parameter sumber gambar, contour retrieval mode dan yang ketiga adalah metode aproksimasi. luas pada contour ini bisa 
  
- ##Tugas Opsional OpenCV warna dalam warna
+ ## Tugas Opsional OpenCV warna dalam warna
  Pertama frame akan diconvert ke hsv
  ```
  hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)

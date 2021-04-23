@@ -43,7 +43,7 @@ gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf dig
  #### 3. Median Blurring
  Pada fungsi `cv.MedianBlur()` ini akan mengambil nilai tengah dari semuah pixel yang berada di daerah kernel lalu elemen tengahnya akan diganti dengan nilai median. Fungsi ini akan sangat efektif menghilangkan "salt and paper noise" di sebuah gambar
  
- ##Contours
+ ## Contours
  contour ini adalah alat yang berhuna untuk analisis bentuk dan deteksi serta mengenal objek objek. contour ini bisa dicari menggunakan fungsi `cv.findCOuntours` yang memili parameter sumber gambar, contour retrieval mode dan yang ketiga adalah metode aproksimasi. luas pada contour ini bisa 
  
  

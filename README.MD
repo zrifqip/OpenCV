@@ -46,11 +46,62 @@ gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf dig
  ## Contours
  contour ini adalah alat yang berhuna untuk analisis bentuk dan deteksi serta mengenal objek objek. contour ini bisa dicari menggunakan fungsi `cv.findCOuntours` yang memili parameter sumber gambar, contour retrieval mode dan yang ketiga adalah metode aproksimasi. luas pada contour ini bisa 
  
- 
- 
- 
- 
+ ##Tugas Opsional OpenCV warna dalam warna
+ Pertama frame akan diconvert ke hsv
+ ```
+ hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+ ```
+ lalu dibuat `lower_blue` dan `upper_blue` untuk dimasking
+ ```
+ lower_blue = np.array([100,150,0])
+ upper_blue = np.array([140,255,255])
+ mask = cv.inRange(hsv, lower_blue, upper_blue)
+ ```
+ jika terdapat warna biru maka akan dicari nilai paling luas 
+ ```
+ blue_area = max(bluecnts, key=cv.contourArea)
+ ```
+ gambar rectangle dan juga textnya 
+ ```
+ imageFrame = cv.rectangle(frame, (x, y), 
+                                (x + w, y + h), 
+                                (0, 255, 0), 2)
+        cv.putText(imageFrame, "Warna Biru", (x, y),
+                        cv.FONT_HERSHEY_DUPLEX, 1.0,
+                        (0, 255, 0))
+        rect = hsv[y:y+h,x:x+w]
+ ```
+ oper nilai hsv dari kotak dan juga frame pada kotak ke fungsi red contours untuk mencari warna merah
+ ```
+ redContours(rect,imageFrame)
+ ```
+ cari warna merah lalu gambar kotak dan tambahkam textnya
+ ```
+ lower_red = np.array([0,50,50])
+        upper_red = np.array([10,255,255])
+        mask2 = cv.inRange(rect, lower_red, upper_red)
+        redcnts= cv.findContours(mask2,
+                                cv.RETR_TREE,
+                                cv.CHAIN_APPROX_SIMPLE)[-2]
+        if redcnts :
+            red_area = max(redcnts, key=cv.contourArea)
+            (x, y, w, h) = cv.boundingRect(red_area)
+            imageFrame = cv.rectangle(frame2, (x, y), 
+                                    (x + w, y + h), 
+                                    (0, 0, 255), 2)
+              
+            cv.putText(imageFrame, "Red Colour", (x, y),
+                        cv.FONT_HERSHEY_DUPLEX, 1.0,
+                        (0, 0, 255))
+ ```
+ tekan 'd' jika ingin mengakhiri
+ ```
+ if cv.waitKey(20) & 0xFF == ord('d'):
+        break
 
+cap.release()
+cv.destroyAllWindows()
+```
  
  
 

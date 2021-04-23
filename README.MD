@@ -46,6 +46,22 @@ cv.THRESH_BINARY_INV <br>
 cv.THRESH_TRUNC <br>
 cv.THRESH_TOZERO <br>
 cv.THRESH_TOZERO_INV <br>
+## Adaptive Thresholding
+Jika kita berada di suatu ruang dengan kondisi lighting yang kurang bagus adaptive thresholding ini akan membantu. Algoritma pada threshod ini <nr>
+ di adaptiveThresholding ini terdapat dua metode yaitu : <br>
+ cv.Adaptive_Thresh_Mean_C :  Nilai dari threshiold ini adalah rata rata dari daerah sekita di kurangkan dengan C konstan <br<
+ cv.ADAPTIVE_THRESH_GAUSSIAN : nilai dari threshold ini adalah jumlah bobot dari gaussian di daerak skeita dikurangkan dengan c konstan
+## Otsu's Binarization :<br>
+di threshold global kita menggunakan nilai yang dipilih sebagai threshold. Metode otsu ini untuk mencegah memilih value lalu ditentukan secara otomatis. bayangkan saja jika sebuah gambar memiliki
 ## Smoothin Image
+### 2D Convolution
+gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf digunakan untuk meremove Noise, Bluurring Image dll. lalu HPF berguna untuk mecari edge pada gambar <br>
+### mage Blurring
+ di opencv terdapat 4 macam teknik untuk memblur gambar
+ #### .Averaging
+ 
+
+ 
+ 
 
 

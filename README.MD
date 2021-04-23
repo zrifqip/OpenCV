@@ -56,9 +56,18 @@ di threshold global kita menggunakan nilai yang dipilih sebagai threshold. Metod
 ## Smoothin Image
 ### 2D Convolution
 gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf digunakan untuk meremove Noise, Bluurring Image dll. lalu HPF berguna untuk mecari edge pada gambar <br>
-### mage Blurring
+### Image Blurring
  di opencv terdapat 4 macam teknik untuk memblur gambar
- #### .Averaging
+ #### 1.Averaging
+ pada averaging ini, digunakan fungsi `cv.blur` atau `cv.boxFilter` untuk memblur gambar. cara kerja dari averaging ini adalah merata rata semua pixel yang berada di daerah kernel dan mengganti elemn di tengah.
+ #### 2. Gaussian Blurring
+ pada gaussiaan ini menggunnakan fungsi cv.GaussiaBlur(). di sini harus ditentukan lebar dan tinggi dari kernel yang harus positif dan ganjil. gaussian blurring ini  sangat efektif unutk meremove gaussian noise
+ #### 3. Median Blurring
+ Pada fungsi `cv.MedianBlur()` ini akan mengambil nilai tengah dari semuah pixel yang berada di daerah kernel lalu elemen tengahnya akan diganti dengan nilai median. Fungsi ini akan sangat efektif menghilangkan "salt and paper noise" di sebuah gambr/
+ #### 4. Bilateral FIltering
+ 
+ 
+ 
  
 
  

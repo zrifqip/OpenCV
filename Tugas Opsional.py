@@ -1,17 +1,17 @@
 import numpy as np
 from cv2 import cv2 as cv
 
-def redContours (rect,frame) :
+def redContours (rect,frame2) :
         lower_red = np.array([0,50,50])
         upper_red = np.array([10,255,255])
         mask2 = cv.inRange(rect, lower_red, upper_red)
         redcnts= cv.findContours(mask2,
                                 cv.RETR_TREE,
                                 cv.CHAIN_APPROX_SIMPLE)[-2]
-        if(len(redcnts) > 0) :
+        if redcnts :
             red_area = max(redcnts, key=cv.contourArea)
             (x, y, w, h) = cv.boundingRect(red_area)
-            imageFrame = cv.rectangle(frame, (x, y), 
+            imageFrame = cv.rectangle(frame2, (x, y), 
                                     (x + w, y + h), 
                                     (0, 0, 255), 2)
               
@@ -23,17 +23,14 @@ cap = cv.VideoCapture(0)
 
 while 1:
     _, frame = cap.read()
-    # Convert BGR to HSV
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
-    # define range of blue color in HSV
     lower_blue = np.array([100,150,0])
     upper_blue = np.array([140,255,255])
-    # Threshold the HSV image to get only blue colors
     mask = cv.inRange(hsv, lower_blue, upper_blue)
     bluecnts = cv.findContours(mask,
                               cv.RETR_EXTERNAL,
                               cv.CHAIN_APPROX_SIMPLE)[-2]
-    if len(bluecnts) > 0:
+    if bluecnts :
         blue_area = max(bluecnts, key=cv.contourArea)
         (x, y, w, h) = cv.boundingRect(blue_area)
         imageFrame = cv.rectangle(frame, (x, y), 
@@ -46,9 +43,6 @@ while 1:
         redContours(rect,imageFrame)
 
     cv.imshow('frame',frame)
-    cv.imshow('mask',mask)
-
-     
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
 

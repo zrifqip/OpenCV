@@ -18,6 +18,7 @@ Rotasi ini digunakan untuk memutar gambar, gambar akan terputar sesuai dengan su
 
 ## Image Thresholding
 Thresholding adalah sebuah teknik segmentasi untuk memisahkan objek dari background di proses dari thresholding ini akan dibandingkan setiap pixel gambar dengan nilai thresholder pada batas yang telah ditentukan. pada fungsi threshold ini terdapat 3 argumen. yang pertama adalah sumber dari gambar. lalu yang kedua adalah pixel value, dan yang ketiga adalah nilai maximum dari threshold. di paramenter keempat dari tipe thresholding yang digunakan. tipe tuipe dari threshoolding adalah sebagai berikut : <br>
+<br>
 cv.THRESH_BINARY  <br>
 cv.THRESH_BINARY_INV <br>
 cv.THRESH_TRUNC <br>

@@ -41,8 +41,11 @@ gambar bisa difilter menggunakan lowpasfilter dan juga highpass filters. lpf dig
  #### 2. Gaussian Blurring
  pada gaussiaan ini menggunnakan fungsi cv.GaussiaBlur(). di sini harus ditentukan lebar dan tinggi dari kernel yang harus positif dan ganjil. gaussian blurring ini  sangat efektif unutk meremove gaussian noise
  #### 3. Median Blurring
- Pada fungsi `cv.MedianBlur()` ini akan mengambil nilai tengah dari semuah pixel yang berada di daerah kernel lalu elemen tengahnya akan diganti dengan nilai median. Fungsi ini akan sangat efektif menghilangkan "salt and paper noise" di sebuah gambr/
- #### 4. Bilateral FIltering
+ Pada fungsi `cv.MedianBlur()` ini akan mengambil nilai tengah dari semuah pixel yang berada di daerah kernel lalu elemen tengahnya akan diganti dengan nilai median. Fungsi ini akan sangat efektif menghilangkan "salt and paper noise" di sebuah gambar
+ 
+ ##Contours
+ contour ini adalah alat yang berhuna untuk analisis bentuk dan deteksi serta mengenal objek objek. contour ini bisa dicari menggunakan fungsi `cv.findCOuntours` yang memili parameter sumber gambar, contour retrieval mode dan yang ketiga adalah metode aproksimasi. luas pada contour ini bisa 
+ 
  
  
  
